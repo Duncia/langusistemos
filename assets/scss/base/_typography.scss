@@ -1,0 +1,84 @@
+@use "_variables" as *;
+@use "_mixins" as *;
+@font-face {
+  font-family: "DegularText-Bold";
+  src:
+    url("/assets/fonts/DegularText-Bold.woff2") format("woff2"),
+    url("/assets/fonts/DegularText-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DegularVariable";
+  src:
+    url("/assets/fonts/DegularVariable.woff2") format("woff2"),
+    url("/assets/fonts/DegularVariable.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Erbaum-Regular";
+  src:
+    url("/assets/fonts/Erbaum-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Erbaum-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: "DegularVariable", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+h8 {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: "Erbaum-Regular", sans-serif;
+  color: $color-black;
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 400;
+  @include smallLaptop {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+  @include smallLaptop {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+p {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: "DegularVariable", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  color: $color-black;
+  word-wrap: break-word;
+}

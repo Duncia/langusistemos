@@ -1,0 +1,16 @@
+{
+  "name": "langusistemos",
+  "version": "1.0.0",
+  "description": "WP Custom Theme",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.11.0"
+  }
+}

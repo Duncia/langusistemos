@@ -1,0 +1,7 @@
+@use "../base/_variables" as *;
+.header {
+  background-color: $color-black;
+  p {
+    color: $color-white;
+  }
+}

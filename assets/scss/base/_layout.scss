@@ -1,0 +1,39 @@
+@use "_mixins" as *;
+.container {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  &__inner {
+    max-width: 1240px;
+    margin: auto;
+    @include veryBigScreen {
+      max-width: 1640px;
+    }
+  }
+}
+.d-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  @include smallLaptop {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.d-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  @include smallLaptop {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.block-width-fix {
+  max-width: 1240px;
+  margin: auto;
+}
