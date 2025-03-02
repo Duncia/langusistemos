@@ -1,7 +1,358 @@
 @use "../base/_variables" as *;
+@use "../base/_mixins" as *;
 .header {
   background-color: $color-black;
-  p {
-    color: $color-white;
+  &__top {
+    display: none;
+    background-color: $color-black2;
+    @include tablet {
+      display: block;
+    }
+    &--inner {
+      max-width: 90rem;
+      margin: auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li {
+          color: $color-white;
+          font-family: "DegularVariable", sans-serif;
+          font-weight: 700;
+          font-size: 0.875rem;
+          line-height: 1.375rem;
+          margin-right: 1.5rem;
+          display: flex;
+          align-items: center;
+        }
+      }
+      @include desktop {
+        justify-content: space-between;
+      }
+      @include largeScreen {
+        padding: 0.75rem 2.5rem;
+      }
+    }
+    &--left {
+      display: none;
+      ul {
+        li {
+          svg {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+      @include desktop {
+        display: block;
+      }
+    }
+    &--right {
+      ul {
+        li {
+          svg {
+            margin-right: 0.5rem;
+          }
+          a {
+            text-decoration: none;
+          }
+        }
+        li:last-of-type {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+  &__menu {
+    &--inner {
+      max-width: 90rem;
+      margin: auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        color: $color-white;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        li {
+          color: $color-white;
+          font-family: "DegularVariable", sans-serif;
+          font-weight: 700;
+          font-size: 1rem;
+          line-height: 1.5rem;
+          margin-right: 1.5rem;
+          display: flex;
+          align-items: center;
+          a {
+            position: relative;
+          }
+          a:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: -0.4rem;
+            content: "";
+            display: block;
+            height: 2px;
+            position: absolute;
+            width: 0;
+            background-color: $color-yellow;
+            transition: width 0.5s ease;
+            width: 0;
+          }
+          a:hover:after {
+            width: 100%;
+          }
+        }
+        .current-menu-item {
+          a:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: -0.4rem;
+            content: "";
+            display: block;
+            height: 2px;
+            position: absolute;
+            width: 0;
+            background-color: $color-yellow;
+            transition: width 0.5s ease;
+            width: 100%;
+          }
+          li {
+            a:after {
+              width: 0;
+            }
+          }
+        }
+      }
+    }
+    .header__logo {
+      max-width: 7.5rem;
+      @include largeScreen {
+        max-width: 10rem;
+      }
+    }
+    &--right {
+      display: flex;
+      align-items: center;
+      ul {
+        li {
+          a {
+            text-decoration: none !important;
+          }
+        }
+      }
+      .header__nav {
+        display: none;
+        li:hover .sub-menu {
+          display: grid;
+        }
+        @include desktop {
+          display: block;
+        }
+        ul li .sub-menu {
+          position: absolute;
+          white-space: nowrap;
+          background-color: $color-white;
+          left: 0;
+          top: 8.8rem;
+          width: 100%;
+          text-align: left;
+          display: none;
+          grid-template-columns: 1fr;
+          justify-content: center;
+          row-gap: 2rem;
+          column-gap: 2rem;
+          z-index: 10;
+          padding: 3rem 2rem 3rem;
+          li {
+            a {
+              color: $color-black;
+              text-decoration: none;
+            }
+            a:hover:after {
+              width: 0;
+            }
+          }
+          @include smallLaptop {
+            grid-template-columns: 1fr 1fr;
+          }
+          @include desktop {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+          @include innerContainerScreen {
+            grid-template-columns: 25rem 25rem 25rem;
+          }
+        }
+        ul li .sub-menu:before {
+          content: "";
+          display: block;
+          height: 45px;
+          position: absolute;
+          top: -45px;
+          width: 100%;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  &__buttons {
+    display: none;
+    @include biggerTablet {
+      display: flex;
+    }
+    a {
+      text-decoration: none !important;
+    }
+    .btn--white {
+      margin-right: 1rem;
+    }
+    &--mobile {
+      display: block;
+      width: 100%;
+      .btn--white {
+        margin-right: 0rem;
+        border: 1px solid $color-grey-borders;
+        margin-top: 1rem;
+      }
+    }
+  }
+  &__mobileMenu {
+    background-color: $color-white;
+    display: block;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+    position: absolute;
+    width: 100%;
+    z-index: 50;
+    @include biggerTablet {
+      display: flex;
+    }
+    @include desktop {
+      display: none;
+    }
+    &--close {
+      display: none;
+    }
+    .header__mobileNav {
+      padding-right: 0rem;
+      @include biggerTablet {
+        padding-right: 2rem;
+      }
+      ul {
+        margin-bottom: 3rem;
+        list-style: none;
+        li {
+          color: $color-black;
+          font-family: "Erbaum-Regular", sans-serif;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 1.5rem;
+          padding-bottom: 1.5rem;
+          position: relative;
+          a {
+            text-decoration: none;
+          }
+          .menu-toggle {
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+            margin-left: 10px;
+          }
+          .sub-menu {
+            margin-left: 1rem;
+            margin-bottom: 0rem;
+            li {
+              font-family: "DegularText", sans-serif;
+              font-weight: 700;
+              font-size: 0.875rem;
+              line-height: 1.375rem;
+              padding-bottom: 1rem;
+              a {
+                text-decoration: none;
+              }
+            }
+            li:first-of-type {
+              padding-top: 1rem;
+            }
+            li:last-of-type {
+              padding-bottom: 0rem;
+            }
+          }
+        }
+      }
+    }
+    &--text {
+      font-family: "DegularText", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      a {
+        text-decoration: none;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+.header__burger {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 20;
+  margin-left: 1.5rem;
+  @include desktop {
+    display: none;
+  }
+  &__middle {
+    position: relative;
+    transition: all 0.2s;
+    &,
+    &::before,
+    &::after {
+      width: 1.3rem;
+      height: 3px;
+      background-color: $color-white;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      transition: all 0.5s;
+    }
+    &::before {
+      top: -8px;
+    }
+    &::after {
+      top: 8px;
+    }
+  }
+  &__middle--active {
+    background-color: transparent !important;
+    &::before {
+      top: 0 !important;
+      transform: rotate(45deg);
+      transition: all 0.5s;
+    }
+    &::after {
+      top: 0 !important;
+      transform: rotate(-45deg);
+      transition: all 0.5s;
+    }
   }
 }

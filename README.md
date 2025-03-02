@@ -40,7 +40,7 @@ This will generate minified and optimized JavaScript and CSS files for deploymen
 
 ## SCSS Modules
 
-This project uses SCSS with modules for styling. SCSS files should be structured within the `src` directory and imported as needed in JavaScript files.
+This project uses SCSS with modules for styling. SCSS files should be structured within the `assets` directory and imported as needed in JavaScript files.
 
 ## File Structure
 

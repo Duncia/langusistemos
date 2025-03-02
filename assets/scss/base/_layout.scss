@@ -1,11 +1,11 @@
 @use "_mixins" as *;
 .container {
   width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 
   &__inner {
-    max-width: 1240px;
+    max-width: 1360px;
     margin: auto;
     @include veryBigScreen {
       max-width: 1640px;
@@ -32,8 +32,4 @@
   @include desktop {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
-.block-width-fix {
-  max-width: 1240px;
-  margin: auto;
 }

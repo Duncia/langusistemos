@@ -1,5 +1,6 @@
 <?php
-
+require_once get_template_directory() . '/inc/customizer-functions.php';
+require_once get_template_directory() . '/inc/cs-posts.php';
 //Theme setup
 function langusistemos_setup(){
     //Title in the tab of every page
@@ -9,16 +10,13 @@ function langusistemos_setup(){
     //Load translations in languages folder
     load_theme_textdomain( 'langusistemos', get_template_directory() . '/languages' );
     //Register menu
-
-    add_theme_support('editor-styles');
-    //add_editor_style('build/style-index.css', 'build/index.css');
-
+    register_nav_menu('header-meniu', 'Viršus / Header');
 }
 add_action('after_setup_theme', 'langusistemos_setup');
 
 //Add JS/CSS files
 wp_enqueue_style('langusistemos_main_styles', get_theme_file_uri('/build/index.css'));
-wp_enqueue_script('index', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0.0', true);
+wp_enqueue_script('index', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0.1', true);
 
 //Remove dash from page title
 add_filter( 'document_title_separator', 'document_title_separator' );

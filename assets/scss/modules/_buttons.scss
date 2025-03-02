@@ -1,0 +1,26 @@
+@use "../base/_variables" as *;
+@use "../base/_mixins" as *;
+.btn {
+  min-width: 10rem;
+  border-radius: 1rem;
+  color: $color-black;
+  font-family: "DegularVariable", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: $color-white;
+  text-align: center;
+  &:hover {
+    background-color: $color-white;
+  }
+  &--yellow {
+    background-color: $color-yellow;
+    &:hover {
+      background-color: $color-yellow;
+    }
+  }
+}
+.wp-block-button__link {
+  min-width: 10rem !important;
+}

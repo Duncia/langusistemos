@@ -1,0 +1,23 @@
+@use "../base/_variables" as *;
+@use "../base/_mixins" as *;
+.footer {
+  background-color: $color-black;
+  &__top {
+    max-width: 90rem;
+    margin: auto;
+    padding: 0.75rem 1.5rem;
+    color: $color-white;
+    @include largeScreen {
+      padding: 3.5rem 2.5rem 2.5rem;
+    }
+  }
+  &__menu {
+    max-width: 90rem;
+    margin: auto;
+    padding: 0.75rem 1.5rem;
+    color: $color-white;
+    @include largeScreen {
+      padding: 2.5rem 2.5rem 2.5rem;
+    }
+  }
+}

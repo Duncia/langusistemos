@@ -1,0 +1,95 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "palette": [
+        {
+          "slug": "ls-yellow",
+          "color": "#FFCC32",
+          "name": "LS Yellow"
+        }
+      ],
+      "background": true,
+      "text": true,
+      "link": true,
+      "custom": true
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Erbaum-Regular, sans-serif",
+          "slug": "erbaum-regular",
+          "name": "Erbaum"
+        },
+        {
+          "fontFamily": "DegularText, sans-serif",
+          "slug": "degularitext",
+          "name": "DegularText"
+        }
+      ],
+      "lineHeight": true,
+      "dropCap": true,
+      "fontWeight": true,
+      "fontStyle": true,
+      "textTransform": true,
+      "letterSpacing": true,
+      "textDecoration": true
+    },
+    "spacing": {
+      "blockGap": null,
+      "margin": true,
+      "padding": true,
+      "units": ["px", "rem", "vh", "vw", "%"]
+    }
+  },
+  "styles": {
+    "elements": {
+      "button": {
+        "dimensions": {
+          "width": "10rem"
+        },
+        "color": {
+          "background": "#ffffff",
+          "text": "#000000"
+        },
+        "border": {
+          "radius": "16px"
+        },
+        "typography": {
+          "fontFamily": "DegularVariable",
+          "fontWeight": "700",
+          "fontSize": "1rem",
+          "lineHeight": "1.5rem"
+        },
+        "spacing": {
+          "padding": {
+            "bottom": "0.75rem",
+            "top": "0.75rem",
+            "left": "1rem",
+            "right": "1rem"
+          }
+        },
+        ":hover": {
+          "color": {
+            "background": "#ffffff",
+            "text": "#000000"
+          }
+        },
+        ":focus": {
+          "color": {
+            "background": "#ffffff",
+            "text": "#000000"
+          }
+        },
+        ":active": {
+          "color": {
+            "background": "#ffffff",
+            "text": "#000000 !important"
+          }
+        }
+      }
+    }
+  }
+}
